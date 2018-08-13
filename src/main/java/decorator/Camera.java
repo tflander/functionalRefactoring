@@ -1,12 +1,9 @@
 package decorator;
 
 import java.awt.*;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Function;
 
 public class Camera {
-    private List<Function<Color, Color>> filters;
+    private ColorFilter[] filters;
 
     public Camera() {
         setFilters();
@@ -14,14 +11,14 @@ public class Camera {
 
     public Color capture(final Color inputColor) {
         Color currentColor = inputColor;
-        for(Function<Color, Color> filter : filters) {
-            currentColor = filter.apply(currentColor);
-        };
+        for (ColorFilter filter : filters) {
+            currentColor = filter.applyFilter(currentColor);
+        }
         return currentColor;
     }
 
-    public void setFilters(final Function<Color, Color>... filters) {
-        this.filters = Arrays.asList(filters);
+    public void setFilters(final ColorFilter... filters) {
+        this.filters = filters;
     }
 
 }

@@ -26,19 +26,20 @@ public class CameraTest {
 
     @Test
     public void brighter() {
-        camera.setFilters(Color::brighter);
+        camera.setFilters(new BrighterFilter());
         assertThat(camera.capture(inputColor)).isEqualTo(new Color(255, 142, 255));
     }
 
     @Test
     public void darker() {
-        camera.setFilters(Color::darker);
+        camera.setFilters(new DarkerFilter());
         assertThat(camera.capture(inputColor)).isEqualTo(new Color(140, 70, 140));
     }
 
     @Test
     public void darkerTwice() {
-        camera.setFilters(Color::darker, Color::darker);
+        DarkerFilter darkerFilter = new DarkerFilter();
+        camera.setFilters(darkerFilter, darkerFilter);
         assertThat(camera.capture(inputColor)).isEqualTo(new Color(98, 49, 98));
     }
 
