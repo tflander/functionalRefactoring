@@ -9,7 +9,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CameraTest {
 
-
     private Camera camera;
 
     final Color inputColor = new Color(200, 100, 200);

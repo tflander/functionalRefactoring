@@ -29,6 +29,9 @@ Decorator pattern is pretty awkward.  Let's make it better with functions.
 
 Let's start by deleting the ColorFilter interface and its implementations, since all we need are functions to take a color and return a potentially modified color.
 
+...Or you can start with the tests and properly test-drive the change by passing lambdas instead of ColorFilters.
+
+
 Now all we have is a broken camera and broken tests.  Let's fix the camera.
 
 Replace the ColorFilter attribute with a function:
