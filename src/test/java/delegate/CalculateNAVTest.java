@@ -21,9 +21,17 @@ public class CalculateNAVTest {
     StockPriceFacade stockPriceFacade;
 
     @Test
-    public void computesStockWorth() {
+    public void computesStockWorthUsingMock() {
         when(stockPriceFacade.getPrice("MyStock")).thenReturn(BigDecimal.valueOf(123.45));
         BigDecimal myStock = calculateNAV.computeStockWorth("MyStock", 10);
         assertThat(myStock).isEqualByComparingTo(BigDecimal.valueOf(1234.50));
+    }
+
+    @Test
+    public void computesStockWorthUsingYahoo() {
+        CalculateNAV realNav = new CalculateNAV(new YahooFacade());
+        BigDecimal googleValue = realNav.computeStockWorth("GOOG", 10);
+        System.out.println("10 shares of google are worth $" + googleValue);
+        assertThat(googleValue).isGreaterThanOrEqualTo(BigDecimal.valueOf(10000));
     }
 }
