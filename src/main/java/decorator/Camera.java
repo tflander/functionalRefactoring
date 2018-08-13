@@ -1,29 +1,27 @@
 package decorator;
 
 import java.awt.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Stream;
 
 public class Camera {
-    private Function<Color, Color> filter;
-
-    public Color capture(final Color inputColor) {
-        final Color processedColor = filter.apply(inputColor);
-        //... more processing of color...
-        return processedColor;
-    }
-
-    //... other functions that use the filter ...
-
-    public void setFilters(final Function<Color, Color>... filters) {
-        filter =
-                Stream.of(filters)
-                        .reduce((filter, next) -> filter.compose(next))
-                        .orElse(color -> color);
-    }
+    private List<Function<Color, Color>> filters;
 
     public Camera() {
         setFilters();
+    }
+
+    public Color capture(final Color inputColor) {
+        Color currentColor = inputColor;
+        for(Function<Color, Color> filter : filters) {
+            currentColor = filter.apply(currentColor);
+        };
+        return currentColor;
+    }
+
+    public void setFilters(final Function<Color, Color>... filters) {
+        this.filters = Arrays.asList(filters);
     }
 
 }

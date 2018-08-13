@@ -21,7 +21,7 @@ public class CameraTest {
 
     @Test
     public void noFilter() {
-        assertThat(camera.capture(inputColor)).isEqualTo(new Color(200, 100, 200));
+        assertThat(camera.capture(inputColor)).isEqualTo(inputColor);
     }
 
     @Test
