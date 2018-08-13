@@ -6,6 +6,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.10.0'
     testCompile group: 'org.mockito', name: 'mockito-core', version: '2.1.0'
+
+    compile group: 'com.yahoofinance-api', name: 'YahooFinanceAPI', version: '3.14.0'
 }
 
 
