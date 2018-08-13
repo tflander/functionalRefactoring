@@ -3,22 +3,18 @@ package decorator;
 import java.awt.*;
 
 public class Camera {
-    private ColorFilter[] filters;
+    private ColorFilter filter;
 
     public Camera() {
-        setFilters();
+        setFilter(new BaseColorFilter());
     }
 
     public Color capture(final Color inputColor) {
-        Color currentColor = inputColor;
-        for (ColorFilter filter : filters) {
-            currentColor = filter.applyFilter(currentColor);
-        }
-        return currentColor;
+        return filter.applyFilter(inputColor);
     }
 
-    public void setFilters(final ColorFilter... filters) {
-        this.filters = filters;
+    public void setFilter(final ColorFilter filters) {
+        this.filter = filters;
     }
 
 }

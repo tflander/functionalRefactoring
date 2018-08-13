@@ -2,10 +2,17 @@ package decorator;
 
 import java.awt.*;
 
-public class DarkerFilter implements ColorFilter {
+public class DarkerFilter extends BaseColorFilter {
+
+    public DarkerFilter() {
+    }
+
+    public DarkerFilter(ColorFilter nextFilter) {
+        super(nextFilter);
+    }
 
     @Override
     public Color applyFilter(Color originalColor) {
-        return originalColor.darker();
+        return super.applyFilter(originalColor.darker());
     }
 }
