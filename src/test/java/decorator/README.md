@@ -1,7 +1,5 @@
 # Decorator Example
 
-For this example, you only have to change the [Camera](camera.java) class.
-
 The Camera class allows you to put a filter on a camera.
 
 We want to support adding a filter that might be connected to another filter, which may also be connected, so we can have a set of filters to enhance our pictures.
