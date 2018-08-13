@@ -1,20 +1,24 @@
 package decorator;
 
 import java.awt.*;
+import java.util.Optional;
 
 public class Camera {
-    private ColorFilter filter;
+    private Optional<ColorFilter> filter;
 
     public Camera() {
-        setFilter(new BaseColorFilter());
+        filter = Optional.empty();
     }
 
     public Color capture(final Color inputColor) {
-        return filter.applyFilter(inputColor);
+        if(filter.isPresent()) {
+            return filter.get().applyFilter(inputColor);
+        }
+        return inputColor;
     }
 
-    public void setFilter(final ColorFilter filters) {
-        this.filter = filters;
+    public void setFilter(final ColorFilter filter) {
+        this.filter = Optional.of(filter);
     }
 
 }
