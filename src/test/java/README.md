@@ -1,4 +1,4 @@
-# Functional Codeing Exercises
+# Functional Coding Exercises
 
 ## [Strategy](strategy)
 
