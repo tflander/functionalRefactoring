@@ -10,4 +10,4 @@ Replace an object delegate with a function delegate.
 
 ## [Decorator](decorator)
 
-Use function composition to create the appropriate decorator function from a list of functions
+Refactor the object-oriented decorator pattern to do it the functional way.
