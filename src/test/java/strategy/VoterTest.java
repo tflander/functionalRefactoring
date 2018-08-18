@@ -7,25 +7,26 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static strategy.VoterCounter.*;
+import static strategy.Voter.*;
 
 public class VoterTest {
 
     private final List<Voter> voters = Arrays.asList(
-            new Voter(Voter.Sex.MALE, Voter.Party.REPUBLICAN),
-            new Voter(Voter.Sex.MALE, Voter.Party.DEMOCRAT),
-            new Voter(Voter.Sex.MALE, Voter.Party.REPUBLICAN),
-            new Voter(Voter.Sex.MALE, Voter.Party.DEMOCRAT),
-            new Voter(Voter.Sex.MALE, Voter.Party.DEMOCRAT),
-            new Voter(Voter.Sex.MALE, Voter.Party.DEMOCRAT),
-            new Voter(Voter.Sex.MALE, Voter.Party.REPUBLICAN),
-            new Voter(Voter.Sex.FEMALE, Voter.Party.DEMOCRAT),
-            new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN),
-            new Voter(Voter.Sex.FEMALE, Voter.Party.DEMOCRAT),
-            new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN),
-            new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN),
-            new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN),
-            new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN),
-            new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN)
+            new Voter(Sex.MALE, Party.REPUBLICAN),
+            new Voter(Sex.MALE, Party.DEMOCRAT),
+            new Voter(Sex.MALE, Party.REPUBLICAN),
+            new Voter(Sex.MALE, Party.DEMOCRAT),
+            new Voter(Sex.MALE, Party.DEMOCRAT),
+            new Voter(Sex.MALE, Party.DEMOCRAT),
+            new Voter(Sex.MALE, Party.REPUBLICAN),
+            new Voter(Sex.FEMALE, Party.DEMOCRAT),
+            new Voter(Sex.FEMALE, Party.REPUBLICAN),
+            new Voter(Sex.FEMALE, Party.DEMOCRAT),
+            new Voter(Sex.FEMALE, Party.REPUBLICAN),
+            new Voter(Sex.FEMALE, Party.REPUBLICAN),
+            new Voter(Sex.FEMALE, Party.REPUBLICAN),
+            new Voter(Sex.FEMALE, Party.REPUBLICAN),
+            new Voter(Sex.FEMALE, Party.REPUBLICAN)
     );
 
     @Test
