@@ -1,11 +1,9 @@
-# Strategy Example
+# Strategy and Composite Example
 
-Late on a Friday, your pointy-haired boss asks you to add some methods to AssetUtil.
+The strategy pattern allows us to plug-in custom behavior for a method.
 
-Add them quickly using copy/paste, then refactor using strategy pattern
+We have a method to count voters, and we have a strategy plug-in to tell us if a voter should be counted.
 
-1) look at [AssetUtilTest](AssetUtilTest.java)
-2) Copy / Paste existing functionality to create a method to total stocks
-3) Copy / Paste existing functionality to create a method to total bonds
-4) Refactor
+The composite pattern allows us to chain together multiple strategies, so we can filter female democrats by composing the female strategy with the democrat strategy.
 
+We can replace both patterns with one refactor by injecting a predicate in place of the strategy.
