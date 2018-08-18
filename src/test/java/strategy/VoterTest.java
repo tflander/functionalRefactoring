@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static strategy.VoterCounter.*;
 
 public class VoterTest {
 
@@ -28,47 +29,47 @@ public class VoterTest {
     );
 
     @Test
-    public void countVoters() {
-        assertThat(VoterCounter.count(voters)).isEqualTo(15);
+    public void voterCount() {
+        assertThat(count(voters)).isEqualTo(15);
     }
 
     @Test
-    public void countMales() {
-        assertThat(VoterCounter.countMales(voters)).isEqualTo(7);
+    public void males() {
+        assertThat(countMales(voters)).isEqualTo(7);
     }
 
     @Test
-    public void countFemales() {
-        assertThat(VoterCounter.countFemales(voters)).isEqualTo(8);
+    public void females() {
+        assertThat(countFemales(voters)).isEqualTo(8);
     }
 
     @Test
-    public void countDemocrats() {
-        assertThat(VoterCounter.countDemocrats(voters)).isEqualTo(6);
+    public void democrats() {
+        assertThat(countDemocrats(voters)).isEqualTo(6);
     }
 
     @Test
-    public void countRepublicans() {
-        assertThat(VoterCounter.countRepublicans(voters)).isEqualTo(9);
+    public void republicans() {
+        assertThat(countRepublicans(voters)).isEqualTo(9);
     }
 
     @Test
-    public void countFemaleDemocrats() {
-        assertThat(VoterCounter.countFemaleDemocrats(voters)).isEqualTo(2);
+    public void femaleDemocrats() {
+        assertThat(countFemaleDemocrats(voters)).isEqualTo(2);
     }
 
     @Test
-    public void countMaleDemocrats() {
-        assertThat(VoterCounter.countMaleDemocrats(voters)).isEqualTo(4);
+    public void maleDemocrats() {
+        assertThat(countMaleDemocrats(voters)).isEqualTo(4);
     }
 
     @Test
-    public void countFemaleRepublicans() {
-        assertThat(VoterCounter.countFemaleRepublicans(voters)).isEqualTo(6);
+    public void femaleRepublicans() {
+        assertThat(countFemaleRepublicans(voters)).isEqualTo(6);
     }
 
     @Test
-    public void countMaleRepublicans() {
-        assertThat(VoterCounter.countMaleRepublicans(voters)).isEqualTo(3);
+    public void maleRepublicans() {
+        assertThat(countMaleRepublicans(voters)).isEqualTo(3);
     }
 }
