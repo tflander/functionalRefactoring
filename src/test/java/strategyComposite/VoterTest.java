@@ -1,4 +1,4 @@
-package strategy;
+package strategyComposite;
 
 import org.junit.Test;
 
@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static strategy.VoterCounter.*;
-import static strategy.Voter.*;
+import static strategyComposite.VoterCounter.*;
+import static strategyComposite.Voter.*;
 
 public class VoterTest {
 

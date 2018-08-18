@@ -1,4 +1,4 @@
-package strategy;
+package strategyComposite;
 
 public class Voter {
 
