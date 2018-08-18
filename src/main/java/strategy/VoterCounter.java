@@ -53,7 +53,7 @@ public interface VoterCounter {
 
     static int countMaleRepublicans(List<Voter> voters) {
         return (int)voters.stream()
-                .filter(voter -> voter.sex == Voter.Sex.FEMALE && voter.party == Voter.Party.REPUBLICAN)
+                .filter(voter -> voter.sex == Voter.Sex.MALE && voter.party == Voter.Party.REPUBLICAN)
                 .count();
     }
 }

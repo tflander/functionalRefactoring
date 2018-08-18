@@ -13,35 +13,43 @@ public class VoterTest {
             new Voter(Voter.Sex.MALE, Voter.Party.REPUBLICAN),
             new Voter(Voter.Sex.MALE, Voter.Party.DEMOCRAT),
             new Voter(Voter.Sex.MALE, Voter.Party.REPUBLICAN),
+            new Voter(Voter.Sex.MALE, Voter.Party.DEMOCRAT),
+            new Voter(Voter.Sex.MALE, Voter.Party.DEMOCRAT),
+            new Voter(Voter.Sex.MALE, Voter.Party.DEMOCRAT),
+            new Voter(Voter.Sex.MALE, Voter.Party.REPUBLICAN),
             new Voter(Voter.Sex.FEMALE, Voter.Party.DEMOCRAT),
             new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN),
             new Voter(Voter.Sex.FEMALE, Voter.Party.DEMOCRAT),
+            new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN),
+            new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN),
+            new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN),
+            new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN),
             new Voter(Voter.Sex.FEMALE, Voter.Party.REPUBLICAN)
     );
 
     @Test
     public void countVoters() {
-        assertThat(VoterCounter.count(voters)).isEqualTo(7);
+        assertThat(VoterCounter.count(voters)).isEqualTo(15);
     }
 
     @Test
     public void countMales() {
-        assertThat(VoterCounter.countMales(voters)).isEqualTo(3);
+        assertThat(VoterCounter.countMales(voters)).isEqualTo(7);
     }
 
     @Test
     public void countFemales() {
-        assertThat(VoterCounter.countFemales(voters)).isEqualTo(4);
+        assertThat(VoterCounter.countFemales(voters)).isEqualTo(8);
     }
 
     @Test
     public void countDemocrats() {
-        assertThat(VoterCounter.countDemocrats(voters)).isEqualTo(3);
+        assertThat(VoterCounter.countDemocrats(voters)).isEqualTo(6);
     }
 
     @Test
     public void countRepublicans() {
-        assertThat(VoterCounter.countRepublicans(voters)).isEqualTo(4);
+        assertThat(VoterCounter.countRepublicans(voters)).isEqualTo(9);
     }
 
     @Test
@@ -51,16 +59,16 @@ public class VoterTest {
 
     @Test
     public void countMaleDemocrats() {
-        assertThat(VoterCounter.countMaleDemocrats(voters)).isEqualTo(1);
+        assertThat(VoterCounter.countMaleDemocrats(voters)).isEqualTo(4);
     }
 
     @Test
     public void countFemaleRepublicans() {
-        assertThat(VoterCounter.countFemaleRepublicans(voters)).isEqualTo(2);
+        assertThat(VoterCounter.countFemaleRepublicans(voters)).isEqualTo(6);
     }
 
     @Test
     public void countMaleRepublicans() {
-        assertThat(VoterCounter.countMaleRepublicans(voters)).isEqualTo(2);
+        assertThat(VoterCounter.countMaleRepublicans(voters)).isEqualTo(3);
     }
 }
