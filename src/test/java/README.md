@@ -1,12 +1,9 @@
 # Functional Coding Exercises
 
-## [Strategy](strategy)
+## [Strategy and Composite](strategyComposite)
 
-Implement new functionalality using copy/paste, then refactor using strategy pattern
+replace a strategy pattern with a predicate.  Replace composite strategies with predicate composition.
 
-## [Delegate](delegate)
-
-Replace an object delegate with a function delegate.
 
 ## [Decorator](decorator)
 
