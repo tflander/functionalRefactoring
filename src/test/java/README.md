@@ -4,6 +4,9 @@
 
 replace a strategy pattern with a predicate.  Replace composite strategies with predicate composition.
 
+## [Execute Around Method](executeAroundMethod)
+
+simple and flawless way to allocate and free system resources
 
 ## [Decorator](decorator)
 
