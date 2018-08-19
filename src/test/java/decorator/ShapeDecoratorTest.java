@@ -38,16 +38,23 @@ public class ShapeDecoratorTest {
 
     @Test
     public void drawsRedRectangle() {
-        new RedDecorator(new Rectangle(printStream)).draw();
+        new FillDecorator("Red", new Rectangle(printStream)).draw();
         verify(printStream, times(2)).println(stringArgumentCaptor.capture());
         assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Red", "Rectangle");
     }
 
     @Test
-    public void drawsRedCircle() {
-        new RedDecorator(new Circle(printStream)).draw();
+    public void drawsBlueCircle() {
+        new FillDecorator("Blue", new Circle(printStream)).draw();
         verify(printStream, times(2)).println(stringArgumentCaptor.capture());
-        assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Red", "Circle");
+        assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Blue", "Circle");
+    }
+
+    @Test
+    public void drawsRedRectangleWithDropShadow() {
+        new DropShadowDecorator(new FillDecorator("Red", new Rectangle(printStream))).draw();
+        verify(printStream, times(3)).println(stringArgumentCaptor.capture());
+        assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Red", "Rectangle", "With dropshadow");
     }
 
 }

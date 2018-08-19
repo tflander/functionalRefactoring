@@ -1,5 +1,7 @@
 package decorator;
 
+import java.io.PrintStream;
+
 public abstract class ShapeDecorator implements Shape {
     protected Shape decoratedShape;
 
@@ -11,4 +13,10 @@ public abstract class ShapeDecorator implements Shape {
     public void draw() {
         decoratedShape.draw();
     }
+
+    @Override
+    public PrintStream getPrintStream() {
+        return decoratedShape.getPrintStream();
+    }
+
 }
