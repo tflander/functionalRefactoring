@@ -60,7 +60,7 @@ public class TransactionManagerTest {
              - Create a new transaction
              - Use a cached transaction
              - Use a pooled transaction
-          2) Commit is handled automagically
+          2) Close is handled automagically
           3) Exception handling is also handled
 
         New problem:

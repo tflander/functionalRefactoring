@@ -1,7 +1,5 @@
 package decorator;
 
-import java.io.PrintStream;
-
 public class FillDecorator extends ShapeDecorator {
 
     private final String fillColor;
