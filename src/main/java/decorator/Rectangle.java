@@ -14,6 +14,6 @@ public class Rectangle extends BaseShape {
 
     @Override
     public void draw() {
-        getPrintStream().println("Rectangle");
+        getCanvas().println("Rectangle");
     }
 }

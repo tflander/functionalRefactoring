@@ -9,7 +9,7 @@ public class DropShadowDecorator extends ShapeDecorator {
     @Override
     public void draw() {
         super.draw();
-        getPrintStream().println("With dropshadow");
+        getCanvas().println("With dropshadow");
     }
 
 }

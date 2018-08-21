@@ -15,8 +15,8 @@ public abstract class ShapeDecorator implements Shape {
     }
 
     @Override
-    public PrintStream getPrintStream() {
-        return decoratedShape.getPrintStream();
+    public PrintStream getCanvas() {
+        return decoratedShape.getCanvas();
     }
 
 }

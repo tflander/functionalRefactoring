@@ -11,7 +11,7 @@ public class FillDecorator extends ShapeDecorator {
 
     @Override
     public void draw() {
-        getPrintStream().println(fillColor);
+        getCanvas().println(fillColor);
         super.draw();
     }
 }

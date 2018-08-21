@@ -15,6 +15,6 @@ public class Circle extends BaseShape {
 
     @Override
     public void draw() {
-        getPrintStream().println("Circle");
+        getCanvas().println("Circle");
     }
 }

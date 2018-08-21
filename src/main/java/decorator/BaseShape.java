@@ -4,18 +4,18 @@ import java.io.PrintStream;
 
 public abstract class BaseShape implements Shape {
 
-    private final PrintStream out;
+    private final PrintStream canvas;
 
-    public BaseShape(PrintStream out) {
-        this.out = out;
+    public BaseShape(PrintStream canvas) {
+        this.canvas = canvas;
     }
 
     public BaseShape() {
-        this.out = System.out;
+        this.canvas = System.out;
     }
 
     @Override
-    public PrintStream getPrintStream() {
-        return out;
+    public PrintStream getCanvas() {
+        return canvas;
     }
 }

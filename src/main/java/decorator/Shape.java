@@ -4,7 +4,7 @@ import java.io.PrintStream;
 
 public interface Shape {
 
-    PrintStream getPrintStream();
+    PrintStream getCanvas();
 
     void draw();
 
