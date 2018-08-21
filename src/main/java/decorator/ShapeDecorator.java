@@ -19,4 +19,9 @@ public abstract class ShapeDecorator implements Shape {
         return decoratedShape.getCanvas();
     }
 
+    @Override
+    public String getShapeDescription() {
+        return decoratedShape.getShapeDescription();
+    }
+
 }

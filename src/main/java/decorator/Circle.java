@@ -4,17 +4,8 @@ import java.io.PrintStream;
 
 public class Circle extends BaseShape {
 
-
     public Circle(PrintStream out) {
-        super(out);
+        super(out, "Circle");
     }
 
-    public Circle() {
-        super();
-    }
-
-    @Override
-    public void draw() {
-        getCanvas().println("Circle");
-    }
 }

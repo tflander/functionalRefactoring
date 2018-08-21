@@ -26,35 +26,39 @@ public class ShapeDecoratorTest {
     public void drawsCircle() {
         new Circle(canvas).draw();
         verify(canvas).println(stringArgumentCaptor.capture());
-        assertThat(stringArgumentCaptor.getValue()).isEqualTo("Circle");
+        assertThat(stringArgumentCaptor.getValue()).isEqualTo("Drawing Circle Outline...");
     }
 
     @Test
     public void drawsRectangle() {
         new Rectangle(canvas).draw();
         verify(canvas).println(stringArgumentCaptor.capture());
-        assertThat(stringArgumentCaptor.getValue()).isEqualTo("Rectangle");
+        assertThat(stringArgumentCaptor.getValue()).isEqualTo("Drawing Rectangle Outline...");
     }
 
     @Test
     public void drawsRedRectangle() {
         new FillDecorator("Red", new Rectangle(canvas)).draw();
         verify(canvas, times(2)).println(stringArgumentCaptor.capture());
-        assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Red", "Rectangle");
+        assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Drawing Rectangle Outline...", "Filling Rectangle with Red...");
     }
 
     @Test
     public void drawsBlueCircle() {
         new FillDecorator("Blue", new Circle(canvas)).draw();
         verify(canvas, times(2)).println(stringArgumentCaptor.capture());
-        assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Blue", "Circle");
+        assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Drawing Circle Outline...", "Filling Circle with Blue...");
     }
 
     @Test
     public void drawsRedRectangleWithDropShadow() {
         new DropShadowDecorator(new FillDecorator("Red", new Rectangle(canvas))).draw();
         verify(canvas, times(3)).println(stringArgumentCaptor.capture());
-        assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Red", "Rectangle", "With dropshadow");
+        assertThat(stringArgumentCaptor.getAllValues()).containsExactly(
+                "Drawing dropshadow for Rectangle...",
+                "Drawing Rectangle Outline...",
+                "Filling Rectangle with Red..."
+        );
     }
 
 }

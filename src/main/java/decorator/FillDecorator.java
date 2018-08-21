@@ -11,7 +11,7 @@ public class FillDecorator extends ShapeDecorator {
 
     @Override
     public void draw() {
-        getCanvas().println(fillColor);
         super.draw();
+        getCanvas().println("Filling " + decoratedShape.getShapeDescription() + " with " + fillColor + "...");
     }
 }
