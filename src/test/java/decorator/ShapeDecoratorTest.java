@@ -17,43 +17,43 @@ import static org.mockito.Mockito.verify;
 public class ShapeDecoratorTest {
 
     @Mock
-    private PrintStream printStream;
+    private PrintStream canvas;
 
     @Captor
     private ArgumentCaptor<String> stringArgumentCaptor;
 
     @Test
     public void drawsCircle() {
-        new Circle(printStream).draw();
-        verify(printStream).println(stringArgumentCaptor.capture());
+        new Circle(canvas).draw();
+        verify(canvas).println(stringArgumentCaptor.capture());
         assertThat(stringArgumentCaptor.getValue()).isEqualTo("Circle");
     }
 
     @Test
     public void drawsRectangle() {
-        new Rectangle(printStream).draw();
-        verify(printStream).println(stringArgumentCaptor.capture());
+        new Rectangle(canvas).draw();
+        verify(canvas).println(stringArgumentCaptor.capture());
         assertThat(stringArgumentCaptor.getValue()).isEqualTo("Rectangle");
     }
 
     @Test
     public void drawsRedRectangle() {
-        new FillDecorator("Red", new Rectangle(printStream)).draw();
-        verify(printStream, times(2)).println(stringArgumentCaptor.capture());
+        new FillDecorator("Red", new Rectangle(canvas)).draw();
+        verify(canvas, times(2)).println(stringArgumentCaptor.capture());
         assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Red", "Rectangle");
     }
 
     @Test
     public void drawsBlueCircle() {
-        new FillDecorator("Blue", new Circle(printStream)).draw();
-        verify(printStream, times(2)).println(stringArgumentCaptor.capture());
+        new FillDecorator("Blue", new Circle(canvas)).draw();
+        verify(canvas, times(2)).println(stringArgumentCaptor.capture());
         assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Blue", "Circle");
     }
 
     @Test
     public void drawsRedRectangleWithDropShadow() {
-        new DropShadowDecorator(new FillDecorator("Red", new Rectangle(printStream))).draw();
-        verify(printStream, times(3)).println(stringArgumentCaptor.capture());
+        new DropShadowDecorator(new FillDecorator("Red", new Rectangle(canvas))).draw();
+        verify(canvas, times(3)).println(stringArgumentCaptor.capture());
         assertThat(stringArgumentCaptor.getAllValues()).containsExactly("Red", "Rectangle", "With dropshadow");
     }
 
