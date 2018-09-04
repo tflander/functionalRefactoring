@@ -1,10 +1,8 @@
-# Decorator Example
+# Decorator
 
-The Camera class allows you to put a filter on a camera.
+## Example
 
-We want to support adding a filter that might be connected to another filter, which may also be connected, so we can have a set of filters to enhance our pictures.
-
-We use decorator pattern to create a set of filters acting as a single filter.
+We will start with a variation of the Tutorials Point decorator example for shapes.  We can draw a shape, then decorate it with a drop shadow and/or a fill color.
 
 The first time we used decorator pattern in Java was somthing like this:
 
@@ -27,4 +25,6 @@ The functionality to open files, buffer input, and read data line-by-line are im
 
 Decorator pattern is pretty awkward.  Let's make it better with functions.
 
-We will start with a variation of the Tutorials Point decorator example for shapes.
+## Exercise
+
+todo
