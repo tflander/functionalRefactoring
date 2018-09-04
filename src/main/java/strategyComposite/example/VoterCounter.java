@@ -1,4 +1,4 @@
-package strategyComposite;
+package strategyComposite.example;
 
 import java.util.List;
 

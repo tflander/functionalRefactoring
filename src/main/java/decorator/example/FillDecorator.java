@@ -1,4 +1,4 @@
-package decorator;
+package decorator.example;
 
 public class FillDecorator extends ShapeDecorator {
 

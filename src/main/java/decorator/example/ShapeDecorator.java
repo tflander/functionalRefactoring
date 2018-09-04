@@ -1,4 +1,4 @@
-package decorator;
+package decorator.example;
 
 import java.io.PrintStream;
 

@@ -1,4 +1,4 @@
-package executeAroundMethod;
+package executeAroundMethod.example;
 
 import org.junit.Test;
 

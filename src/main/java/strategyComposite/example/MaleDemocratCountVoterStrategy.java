@@ -1,18 +1,18 @@
-package strategyComposite;
+package strategyComposite.example;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MaleRepublicanCountVoterStrategy extends CountVoterCompositeStrategy {
+public class MaleDemocratCountVoterStrategy extends CountVoterCompositeStrategy {
 
     private static List<CountVoterStrategy> composites = new ArrayList<>();
 
     static {
         composites.add(new MaleCountVoterStrategy());
-        composites.add(new RepublicanCountVoterStrategy());
+        composites.add(new DemocratCountVoterStrategy());
     }
 
-    public MaleRepublicanCountVoterStrategy() {
+    public MaleDemocratCountVoterStrategy() {
         super(composites);
     }
 }
