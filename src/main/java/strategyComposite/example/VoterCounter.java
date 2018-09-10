@@ -5,8 +5,7 @@ import java.util.List;
 public interface VoterCounter {
 
     static int count(List<Voter> voters) {
-        return (int)voters.stream()
-                .count();
+        return voters.size();
     }
 
     static int countMales(List<Voter> voters) {

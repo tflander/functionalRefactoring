@@ -52,7 +52,7 @@ public class TransactionManagerTest {
         try (ClosableTransaction transaction = transactionManager.startClosableTransaction()) {
             transaction.execute("save this");
             transaction.execute("save that");
-        };
+        }
 
         /*
         Solved Problems:
