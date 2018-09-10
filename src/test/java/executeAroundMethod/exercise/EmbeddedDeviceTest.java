@@ -5,7 +5,7 @@ import org.junit.Test;
 public class EmbeddedDeviceTest {
 
     @Test
-    public void runDevice() {
+    public void runDevice() throws Exception {
         EmbeddedDevice device = new EmbeddedDevice();
         device.powerUp();
         device.doThis();
