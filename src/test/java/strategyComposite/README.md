@@ -12,4 +12,4 @@ We can replace both patterns with one refactor by injecting a predicate in place
 
 ## Exercise
 
-TODO
+Implement a functional strategy to implement the Calculator in CalculatorTest
