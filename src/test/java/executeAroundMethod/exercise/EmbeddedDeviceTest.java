@@ -8,8 +8,8 @@ public class EmbeddedDeviceTest {
     public void runDevice() throws Exception {
         EmbeddedDevice device = new EmbeddedDevice();
         device.powerUp();
-        device.doThis();
-        device.doThat();
+        device.doThis(120);
+        device.doThat(-45);
         device.powerDown();
     }
 }

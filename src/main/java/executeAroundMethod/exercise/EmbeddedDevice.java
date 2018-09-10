@@ -6,13 +6,13 @@ public class EmbeddedDevice {
         System.out.println("powering up, allocating memory and stuff...");
     }
 
-    public void doThis() throws Exception {
-        System.out.println("Doing this...");
+    public void doThis(int i) throws Exception {
+        System.out.println("Doing this with parameter " + i + "...");
         temptFate();
     }
 
-    public void doThat() throws Exception {
-        System.out.println("Doing that...");
+    public void doThat(int i) throws Exception {
+        System.out.println("Doing that with parameter " + i + "...");
         temptFate();
     }
 
