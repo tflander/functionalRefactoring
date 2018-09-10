@@ -21,7 +21,7 @@ public class EmbeddedDeviceTest {
 
     }
 
-    @Test(expected = Exception.class)
+    @Test
     public void verifyEventualFailure() {
         EmbeddedDevice device = new EmbeddedDevice();
         device.powerUp();
