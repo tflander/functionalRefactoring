@@ -20,4 +20,19 @@ public class EmbeddedDeviceTest {
 //        );
 
     }
+
+    @Test(expected = Exception.class)
+    public void verifyEventualFailure() {
+        EmbeddedDevice device = new EmbeddedDevice();
+        device.powerUp();
+        while (true) {
+            try {
+                device.doThis(120);
+                device.doThat(-45);
+            } catch (Exception e) {
+                System.out.println("Encountered expected exception " + e.getMessage());
+                return;
+            }
+        }
+    }
 }
