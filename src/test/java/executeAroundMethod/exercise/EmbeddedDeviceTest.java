@@ -9,8 +9,12 @@ public class EmbeddedDeviceTest {
 
         EmbeddedDevice device = new EmbeddedDevice();
         device.powerUp();
-        device.doThis(120);
-        device.doThat(-45);
+        try {
+            device.doThis(120);
+            device.doThat(-45);
+        } catch (Exception e) {
+            System.out.println("Ignoring Fickle Finger of Fate error");
+        }
         device.powerDown();
 
         // TODO: replace the block above with this commented out block
@@ -52,13 +56,13 @@ public class EmbeddedDeviceTest {
         // Runnable command = () -> device.doThis(10);
 
         // ...but this is OK:
-         Runnable command = () -> {
-             try {
-                 device.doThis(10);
-             } catch (Exception e) {
-                 throw new IllegalStateException(e);
-             }
-         };
+        Runnable command = () -> {
+            try {
+                device.doThis(10);
+            } catch (Exception e) {
+                throw new IllegalStateException(e);
+            }
+        };
 
     }
 
