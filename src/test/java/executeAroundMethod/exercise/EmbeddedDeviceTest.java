@@ -5,20 +5,28 @@ import org.junit.Test;
 public class EmbeddedDeviceTest {
 
     @Test
-    public void runDevice() throws Exception {
+    public void runDevice() {
 
-        EmbeddedDevice device = new EmbeddedDevice();
-        device.powerUp();
-        try {
-            device.doThis(120);
-            device.doThat(-45);
-        } catch (Exception e) {
-            System.out.println("Ignoring Fickle Finger of Fate error");
-        }
-        device.powerDown();
+//        EmbeddedDevice device = new EmbeddedDevice();
+//        device.powerUp();
+//        try {
+//            device.doThis(120);
+//            device.doThat(-45);
+//        } catch (Exception e) {
+//            System.out.println("Ignoring Fickle Finger of Fate error");
+//        }
+//        device.powerDown();
 
         // TODO: replace the block above with this commented out block
-        //        EmbeddedDevice.runCommands(
+        // Hint:  RunCommands needs to:
+        //   1) Take an array of Runnables, which are functions that take no parameters and return nothing.
+        //   2) act against an instance of EmbeddedDevice, either through construction, caching, or pooling.
+        //   3) Power up the device
+        //   4) Power down the device (even if there is a failure)
+        //   5) One of:  de-allocate the device, return it to a pool, or leave the device cached
+        //
+        //   This code does not need to be thread-safe
+//                EmbeddedDevice.runCommands(
 //                EmbeddedDevice.doThisWith(120),
 //                EmbeddedDevice.doThatWith(-45)
 //        );
@@ -42,8 +50,8 @@ public class EmbeddedDeviceTest {
 
     @Test
     public void hintOne() {
-        Runnable displayHintText = showCurryingHint("Hint: Use currying to construct functions");
-        displayHintText.run();
+        Runnable thisFunctionIsCreatedThroughCurrying = showCurryingHint("Hint: Use currying to construct functions");
+        thisFunctionIsCreatedThroughCurrying.run();
     }
 
     @Test
@@ -53,7 +61,7 @@ public class EmbeddedDeviceTest {
         EmbeddedDevice device = new EmbeddedDevice();
 
         // Compile error: Unhandled Exception
-        // Runnable command = () -> device.doThis(10);
+//         Runnable command = () -> device.doThis(10);
 
         // ...but this is OK:
         Runnable command = () -> {
@@ -63,6 +71,7 @@ public class EmbeddedDeviceTest {
                 throw new IllegalStateException(e);
             }
         };
+        command.run();
 
     }
 
