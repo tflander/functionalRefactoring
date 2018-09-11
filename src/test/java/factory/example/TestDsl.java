@@ -1,5 +1,8 @@
 package factory.example;
 
+import factory.example.factories.CompositeItemFactory;
+import factory.example.items.AbstractItem;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestDsl {
@@ -24,7 +27,7 @@ public class TestDsl {
     }
 
     public TestDsl whenNextDay() {
-        AbstractItem originalAbstractItem = ItemFactory.create(itemName, sellIn, quality);
+        AbstractItem originalAbstractItem = new CompositeItemFactory().create(itemName, sellIn, quality);
         GildedRose app = new GildedRose(new AbstractItem[]{originalAbstractItem});
         app.updateQuality();
         abstractItem = app.abstractItems[0];

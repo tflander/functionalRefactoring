@@ -1,4 +1,4 @@
-package factory.example;
+package factory.example.items;
 
 public abstract class AbstractItem {
 
