@@ -1,6 +1,6 @@
 package factory.example;
 
-public class Item {
+public abstract class Item {
 
     public final String itemName;
     public final int sellIn;
@@ -13,7 +13,5 @@ public class Item {
         this.quality = quality;
     }
 
-    public Item age() {
-        return new Item(itemName, sellIn - 1, quality - 1);
-    }
+    public abstract Item age();
 }

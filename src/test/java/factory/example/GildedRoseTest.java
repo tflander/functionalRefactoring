@@ -95,14 +95,6 @@ public class GildedRoseTest {
                 .thenExpectSellIn(2).andExpectQuality(3);
     }
 
-    @Test
-    public void qualityIsNeverLessThanZero() {
-        givenItem().withName("Normal Item").withSellIn(3).withQuality(0)
-                .whenNextDay()
-                .thenExpectSellIn(2).andExpectQuality(0);
-
-    }
-
     private TestDsl givenItem() {
         return new TestDsl();
     }
