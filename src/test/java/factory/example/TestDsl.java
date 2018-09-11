@@ -6,7 +6,7 @@ public class TestDsl {
     private String itemName;
     private int sellIn;
     private int quality;
-    private Item item;
+    private AbstractItem abstractItem;
 
     public TestDsl withName(String itemName) {
         this.itemName = itemName;
@@ -24,19 +24,19 @@ public class TestDsl {
     }
 
     public TestDsl whenNextDay() {
-        Item originalItem = ItemFactory.create(itemName, sellIn, quality);
-        GildedRose app = new GildedRose(new Item[]{originalItem});
+        AbstractItem originalAbstractItem = ItemFactory.create(itemName, sellIn, quality);
+        GildedRose app = new GildedRose(new AbstractItem[]{originalAbstractItem});
         app.updateQuality();
-        item = app.items[0];
+        abstractItem = app.abstractItems[0];
         return this;
     }
 
     public TestDsl thenExpectSellIn(int expectedSellIn) {
-        assertThat(item.sellIn).isEqualTo(expectedSellIn);
+        assertThat(abstractItem.sellIn).isEqualTo(expectedSellIn);
         return this;
     }
 
     public void andExpectQuality(int expectedQuality) {
-        assertThat(item.quality).isEqualTo(expectedQuality);
+        assertThat(abstractItem.quality).isEqualTo(expectedQuality);
     }
 }

@@ -4,16 +4,16 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class GildedRose {
-    public Item[] items;
+    public AbstractItem[] abstractItems;
 
-    public GildedRose(Item[] items) {
+    public GildedRose(AbstractItem[] abstractItems) {
 
-        this.items = items;
+        this.abstractItems = abstractItems;
     }
 
     public void updateQuality() {
-        items = Arrays.stream(items).map(item -> item.age())
+        abstractItems = Arrays.stream(abstractItems).map(item -> item.age())
                 .collect(Collectors.toList())
-                .toArray(new Item[0]);
+                .toArray(new AbstractItem[0]);
     }
 }

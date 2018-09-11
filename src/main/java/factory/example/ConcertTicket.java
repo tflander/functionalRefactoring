@@ -1,13 +1,13 @@
 package factory.example;
 
-public class ConcertTicket extends Item {
+public class ConcertTicket extends AbstractItem {
 
     public ConcertTicket(String itemName, int sellIn, int quality) {
         super(itemName, sellIn, quality);
     }
 
     @Override
-    public Item age() {
+    public AbstractItem age() {
 
         int newQuality = 0;
         if(sellIn > 0) {
