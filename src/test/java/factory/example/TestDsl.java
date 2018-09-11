@@ -1,6 +1,7 @@
 package factory.example;
 
 import factory.example.factories.CompositeItemFactory;
+import factory.example.factories.ItemFactory;
 import factory.example.items.AbstractItem;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -10,6 +11,7 @@ public class TestDsl {
     private int sellIn;
     private int quality;
     private AbstractItem abstractItem;
+    private ItemFactory factory = new CompositeItemFactory();
 
     public TestDsl withName(String itemName) {
         this.itemName = itemName;
@@ -27,7 +29,7 @@ public class TestDsl {
     }
 
     public TestDsl whenNextDay() {
-        AbstractItem originalAbstractItem = new CompositeItemFactory().create(itemName, sellIn, quality);
+        AbstractItem originalAbstractItem = factory.create(itemName, sellIn, quality);
         GildedRose app = new GildedRose(new AbstractItem[]{originalAbstractItem});
         app.updateQuality();
         abstractItem = app.abstractItems[0];
