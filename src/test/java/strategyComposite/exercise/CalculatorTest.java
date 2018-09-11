@@ -36,19 +36,23 @@ public class CalculatorTest {
     @Test
     public void hintOne() {
         System.out.println("Hint: You can bind functions to Enum values");
-        assertThat(Blah.X.operator.apply(2,3)).isEqualTo(7);
-        assertThat(Blah.Y.operator.apply(2,3)).isEqualTo(1);
-        assertThat(Blah.Z.operator.apply(2,3)).isEqualTo(10);
+        assertThat(EnumWithBoundFunction.X.apply(2,3)).isEqualTo(7);
+        assertThat(EnumWithBoundFunction.Y.apply(2,3)).isEqualTo(1);
+        assertThat(EnumWithBoundFunction.Z.apply(2,3)).isEqualTo(10);
     }
 
-    enum Blah {
+    enum EnumWithBoundFunction {
         X((a,b) -> a*2 + b),
         Y((a,b) -> a*2 - b),
         Z((a,b) -> a*(2 + b));
 
-        public final BinaryOperator<Integer> operator;
+        private final BinaryOperator<Integer> operator;
 
-        Blah(BinaryOperator<Integer> operator) {
+        public Integer apply(int a, int b) {
+            return operator.apply(a, b);
+        }
+
+        EnumWithBoundFunction(BinaryOperator<Integer> operator) {
 
             this.operator = operator;
         }
