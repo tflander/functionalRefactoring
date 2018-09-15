@@ -1,11 +1,11 @@
 package basics.consumer.example;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.function.Consumer;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static you.Todo.showToDo;
 
 public class LoggerWithConsumer {
 
@@ -21,8 +21,8 @@ public class LoggerWithConsumer {
     );
 
     @Test
-    @Ignore("Have the test class construct a logger that will capture the last logged message")
     public void logMessage() {
+        showToDo("Have the test class construct a logger that will capture the last logged message");
         logger.info("log message");
         assertThat(lastLoggedMessage).isEqualTo("log message");
     }

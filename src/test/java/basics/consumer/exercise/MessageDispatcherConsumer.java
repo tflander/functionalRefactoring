@@ -1,11 +1,11 @@
 package basics.consumer.exercise;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.function.Consumer;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static you.Todo.showToDo;
 
 public class MessageDispatcherConsumer {
 
@@ -14,8 +14,8 @@ public class MessageDispatcherConsumer {
     String lastTweet;
 
     @Test
-    @Ignore("Create consumers for each of the three delivery methods (email, text, and tweet)")
     public void dispatchesMessages() {
+        showToDo("Create consumers for each of the three delivery methods (email, text, and tweet)");
         Consumer<String>[] foo = new Consumer[]{
                 // TODO: create three consumers for email, text, and tweet
         };
@@ -37,7 +37,7 @@ class MessageDispatcher {
     }
 
     public void dispatch(String outgoingMessage) {
-        for(Consumer<String> dispatcher : dispatchers) {
+        for (Consumer<String> dispatcher : dispatchers) {
             dispatcher.accept(outgoingMessage);
         }
     }

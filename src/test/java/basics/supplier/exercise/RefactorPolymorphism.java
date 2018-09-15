@@ -1,17 +1,17 @@
 package basics.supplier.exercise;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
+import static you.Todo.showToDo;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
 public class RefactorPolymorphism {
 
     @Test
-    @Ignore
     public void cow() {
 
+        showToDo("Refactor object model to use Supplier.  Make Animal not abstract and delete the specific cow classes");
         Cow cow = new Cow();
         assertThat(cow.speak()).isEqualTo("moo");
 
