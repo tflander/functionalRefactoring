@@ -9,8 +9,9 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
+import static you.Todo.showToDo;
 
-public class BeforeConstructorConstructionParameter {
+public class CurryingExample {
 
     Map<String, String> preferences;
 
@@ -29,23 +30,27 @@ public class BeforeConstructorConstructionParameter {
 
     @Test
     public void classBeforeConstructorParameter() {
+        showToDo("read this test and be sure to understands it");
         BeforeConstructor classUnderTest = new BeforeConstructor();
         assertThat(classUnderTest.doThing(preferences, "foo")).isEqualTo("foo=bar");
     }
 
     @Test
     public void classAfterConstructorParameter() {
+        showToDo("read this test and be sure to understands it");
         AfterConstructor classUnderTest = new AfterConstructor(preferences);
         assertThat(classUnderTest.doThing("foo")).isEqualTo("foo=bar");
     }
 
     @Test
     public void functionBeforeConstructorParameter() {
+        showToDo("read this test and be sure to understands it");
         assertThat(uncurriedFunction.apply(preferences, "foo")).isEqualTo("foo=bar");
     }
 
     @Test
     public void functionAfterConstructorParameter() {
+        showToDo("read this test and be sure to understands it");
         Function<String, String> curriedFunction = constructCurriedFunction(preferences);
         assertThat(curriedFunction.apply("foo")).isEqualTo("foo=bar");
     }
