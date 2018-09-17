@@ -17,8 +17,6 @@ public class RefactorPolymorphism {
 
         ExcitedCow excitedCow = new ExcitedCow();
         assertThat(excitedCow.speak()).matches("moo!|moo moo!|MOO!|MOO MOO!|MOOOOO!!");
-
-        fail("TODO: refactor object model to use Supplier.  Make Animal not abstract and delete the specific cow classes");
     }
 }
 
