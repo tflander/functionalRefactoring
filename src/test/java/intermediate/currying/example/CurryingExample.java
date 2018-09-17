@@ -30,27 +30,27 @@ public class CurryingExample {
 
     @Test
     public void classBeforeConstructorParameter() {
-        showToDo("read this test and be sure to understands it");
+        showToDo("read this test and be sure to understand it");
         BeforeConstructor classUnderTest = new BeforeConstructor();
         assertThat(classUnderTest.doThing(preferences, "foo")).isEqualTo("foo=bar");
     }
 
     @Test
     public void classAfterConstructorParameter() {
-        showToDo("read this test and be sure to understands it");
+        showToDo("read this test and be sure to understand how it is different from the previous test");
         AfterConstructor classUnderTest = new AfterConstructor(preferences);
         assertThat(classUnderTest.doThing("foo")).isEqualTo("foo=bar");
     }
 
     @Test
     public void functionBeforeConstructorParameter() {
-        showToDo("read this test and be sure to understands it");
+        showToDo("read this test and be sure to understand it");
         assertThat(uncurriedFunction.apply(preferences, "foo")).isEqualTo("foo=bar");
     }
 
     @Test
     public void functionAfterConstructorParameter() {
-        showToDo("read this test and be sure to understands it");
+        showToDo("read this test and be sure to understand how it is different from the previous test");
         Function<String, String> curriedFunction = constructCurriedFunction(preferences);
         assertThat(curriedFunction.apply("foo")).isEqualTo("foo=bar");
     }
