@@ -27,8 +27,8 @@ class BeforeConstructor {
 }
 
 ```
-
-Now, we use a constructor to bury the preferences from the consumer who calls doThing(...)
+We really don't want the consumer to care about preferences.  We would like to inject an object that
+already knows about preferences.  We use a constructor to bury the preferences from the consumer who calls doThing(...)
 
 ```
 class AfterConstructor {
