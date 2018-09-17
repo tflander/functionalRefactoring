@@ -11,13 +11,13 @@ public class LoggerWithConsumer {
 
     private String lastLoggedMessage;
 
-    @SuppressWarnings("unused") // Hint: Maybe we should use this?
+    @SuppressWarnings("unused") // Hint: Maybe we should use this?  Note that it is a consumer that takes a string and returns nothing
     private void messageLogger(String message) {
         lastLoggedMessage = message;
     }
 
     private final Logger logger = new Logger(
-            message -> System.out.println("TODO: replace this lambda with the messageLogger method for this class instance")
+            message -> System.out.println("TODO: replace this lambda with the method reference messageLogger")
     );
 
     @Test
