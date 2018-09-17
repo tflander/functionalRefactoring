@@ -74,5 +74,4 @@ preferences, the same way we did with the object example:
 
 ```
 
-TODO: example here
 
